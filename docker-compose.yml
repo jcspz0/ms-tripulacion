@@ -9,7 +9,7 @@ services:
       - 8082:8082
     restart: always
     environment:
-      - ENV_MYSQL_HOST=localhost
+      - ENV_MYSQL_HOST=ms-tripulacion-db
       - ENV_MYSQL_PORT=3309
       - ENV_MYSQL_DB=jcdb
       - ENV_MYSQL_USER=jcspz0
