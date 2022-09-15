@@ -1,0 +1,48 @@
+services:
+  backend:
+    image: jcspz0/ms-tripulacion-service:1.0
+    container_name: ms-tripulacion-service
+    build:
+      context: .
+      dockerfile: ./Dockerfile-back
+    ports:
+      - 8082:8082
+    restart: always
+    environment:
+      - ENV_MYSQL_HOST=localhost
+      - ENV_MYSQL_PORT=3309
+      - ENV_MYSQL_DB=jcdb
+      - ENV_MYSQL_USER=jcspz0
+      - ENV_MYSQL_PASS=juancarlos
+      - ENV_APP_PORT=8082
+      - ENV_AMQP_HOST=159.223.144.204 
+      - ENV_AMQP_PORT=5672 
+      - ENV_AMQP_USER=guest 
+      - ENV_AMQP_PASS=guest 
+    depends_on:
+      db:
+        condition: service_healthy
+  db:
+    image: mysql:8.0.29
+    container_name: ms-tripulacion-db
+    ports:
+      - 3309:3309
+    environment:
+      - MYSQL_ROOT_PASSWORD=passroot
+      - MYSQL_DATABASE=jcdb
+      - MYSQL_USER=jcspz0
+      - MYSQL_PASSWORD=juancarlos
+      - MYSQL_TCP_PORT=3309
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin --user=$${MYSQL_USER} --password=$${MYSQL_PASSWORD} ping",
+        ]
+      interval: 10s
+      timeout: 2s
+      retries: 1000
+volumes:
+  mysql-data:
