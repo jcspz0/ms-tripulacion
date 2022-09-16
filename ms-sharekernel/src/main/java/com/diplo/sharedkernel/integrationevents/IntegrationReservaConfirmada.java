@@ -7,22 +7,25 @@ import java.util.UUID;
 import com.diplo.sharedkernel.event.IntegrationEvent;
 
 //public class IntegrationReservaCreada extends IntegrationEvent  {
-public class IntegrationReservaConfirmada implements Serializable{
+public class IntegrationReservaConfirmada {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private final String reservaId;
-	private final int cantidadPasajeros;
-	private final String hora;
-	private final String vueloId;
-	private final String destino;
-	private final int nroDoc;
-	private final int tipoDoc;
-	private final String nombreCompletoPasajero;
-	private final String pagoId;
+	private  String reservaId;
+	private  int cantidadPasajeros;
+	private  String hora;
+	private  String vueloId;
+	private  String destino;
+	private  int nroDoc;
+	private  int tipoDoc;
+	private  String nombreCompletoPasajero;
+	private  String pagoId;
 	
+
+	public IntegrationReservaConfirmada() {
+		super();
+	}
 
 	public IntegrationReservaConfirmada(String reservaId, String vueloId, int tipoDoc, int nroDoc, String nombreCompletoPasajero, String hora, String destino, int cantidadPasajeros, String pagoId) {
 		//super("ReservaCreada",LocalDateTime.now().toString());

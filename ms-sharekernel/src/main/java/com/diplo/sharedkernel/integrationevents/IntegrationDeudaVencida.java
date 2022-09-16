@@ -7,13 +7,17 @@ import java.util.UUID;
 import com.diplo.sharedkernel.event.IntegrationEvent;
 
 //public class IntegrationReservaCreada extends IntegrationEvent  {
-public class IntegrationDeudaVencida   implements Serializable{
+public class IntegrationDeudaVencida   {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private final String reservaId;
+	
+	private String reservaId;
+
+	public IntegrationDeudaVencida() {
+		super();
+	}
 
 	public IntegrationDeudaVencida(String reservaId) {
 		//super("ReservaCreada",LocalDateTime.now().toString());

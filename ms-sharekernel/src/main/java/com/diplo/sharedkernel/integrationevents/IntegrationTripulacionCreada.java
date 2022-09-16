@@ -7,16 +7,19 @@ import java.util.UUID;
 import com.diplo.sharedkernel.event.IntegrationEvent;
 
 //public class IntegrationReservaCreada extends IntegrationEvent  {
-public class IntegrationTripulacionCreada implements Serializable{
+public class IntegrationTripulacionCreada {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	private final String tripulacionId;
-	private final String nombre;
-	private final int nroDoc;
+	private  String tripulacionId;
+	private  String nombre;
+	private  int nroDoc;
 	
+	public IntegrationTripulacionCreada() {
+		super();
+	}
+
 	public IntegrationTripulacionCreada(String tripulacionId, String nombre, int nroDoc) {
 		super();
 		this.tripulacionId = tripulacionId;
