@@ -1,5 +1,3 @@
 package com.diplo.sharedkernel.event;
 
-public interface IEvent {
-
-}
+public interface IEvent {}

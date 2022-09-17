@@ -1,41 +1,53 @@
 package com.diplo.sharedkernel.integrationevents;
 
+import com.diplo.sharedkernel.event.IntegrationEvent;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.diplo.sharedkernel.event.IntegrationEvent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 //public class IntegrationReservaCreada extends IntegrationEvent  {
-public class IntegrationReservaCreada   {
+public class IntegrationReservaCreada {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
+
 	@JsonProperty("nroReserva")
 	private String nroReserva;
+
 	@JsonProperty("reservaId")
 	private String reservaId;
+
 	@JsonProperty("vueloId")
 	private String vueloId;
+
 	@JsonProperty("pasajero")
 	private String pasajero;
+
 	@JsonProperty("hora")
 	private String hora;
+
 	@JsonProperty("cantidadPasajeros")
 	private int cantidadPasajeros;
+
 	@JsonProperty("total")
 	private double total;
 
-	
-	
 	public IntegrationReservaCreada() {
 		super();
 	}
 
-	public IntegrationReservaCreada(String reservaId, String nroReserva, String vueloId, int cantidadPasajeros, String pasajeroId, String hora, double total) {
+	public IntegrationReservaCreada(
+		String reservaId,
+		String nroReserva,
+		String vueloId,
+		int cantidadPasajeros,
+		String pasajeroId,
+		String hora,
+		double total
+	) {
 		//super("ReservaCreada",LocalDateTime.now().toString());
 		this.nroReserva = nroReserva;
 		this.reservaId = reservaId;
@@ -73,5 +85,4 @@ public class IntegrationReservaCreada   {
 	public double getTotal() {
 		return total;
 	}
-
 }

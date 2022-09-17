@@ -1,12 +1,11 @@
 package com.diplo.sharedkernel.core;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import com.diplo.sharedkernel.core.IBussinesRule.IBussinessRule;
 import com.diplo.sharedkernel.event.DomainEvent;
 import com.diplo.sharedkernel.event.IntegrationEvent;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public abstract class Entity<TId> {
 
@@ -30,7 +29,7 @@ public abstract class Entity<TId> {
 	public void ClearDomainEvents() {
 		_domainEvents.clear();
 	}
-	
+
 	public Collection<IntegrationEvent> getIntegrationEvents() {
 		return _integrationEvents;
 	}
@@ -51,7 +50,8 @@ public abstract class Entity<TId> {
 		Id = id;
 	}
 
-	protected void CheckRule(IBussinessRule rule) throws BussinessRuleValidationException {
+	protected void CheckRule(IBussinessRule rule)
+		throws BussinessRuleValidationException {
 		if (rule == null) {
 			throw new IllegalArgumentException("Rule cannot be null");
 		}
@@ -59,5 +59,4 @@ public abstract class Entity<TId> {
 			throw new BussinessRuleValidationException(rule);
 		}
 	}
-
 }

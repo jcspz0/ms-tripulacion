@@ -41,7 +41,7 @@ public class TripulacionController {
 			TripulacionDTO tripulacion = new TripulacionDTO(tripulacionDTO.getTipo(), tripulacionDTO.getNroDoc(), tripulacionDTO.getTipoDoc(), tripulacionDTO.getNombre(), tripulacionDTO.getApellido());
 			reposiroty.save(new TripulacionEntity(tripulacion));
 			AmqpMessage message = new AmqpMessage(new IntegrationTripulacionCreada(tripulacion.getTripulacionId(), tripulacion.getNombre()+" "+tripulacion.getApellido(), tripulacion.getNroDoc()));
-			sender.sendMessage(message, tripulacionCreadaExchange, tripulacionCreadaRoutingkey);
+			sender.sendMessage(message, tripulacionCreadaExchange,"" ,tripulacionCreadaRoutingkey);
 			return tripulacion;
 		} catch (Exception e) {
 			System.out.println("Excepcion "+e);	

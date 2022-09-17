@@ -6,10 +6,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public interface IConsumer<T extends ApplicationEvent> {
-	
 	@EventListener
 	void onProcessEvent(T event);
-	
-	
-	
 }

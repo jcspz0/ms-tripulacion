@@ -1,38 +1,49 @@
 package com.diplo.sharedkernel.integrationevents;
 
+import com.diplo.sharedkernel.event.IntegrationEvent;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
-
-import com.diplo.sharedkernel.event.IntegrationEvent;
 
 //public class IntegrationReservaCreada extends IntegrationEvent  {
 public class IntegrationReservaConfirmada {
 
 	/**
-	 * 
+	 *
 	 */
-	private  String reservaId;
-	private  int cantidadPasajeros;
-	private  String hora;
-	private  String vueloId;
-	private  String destino;
-	private  int nroDoc;
-	private  int tipoDoc;
-	private  String nombreCompletoPasajero;
-	private  String pagoId;
-	
+	private String reservaId;
+	private int cantidadPasajeros;
+	private String hora;
+	private String vueloId;
+	private String destino;
+	private String origen;
+	private int nroDoc;
+	private int tipoDoc;
+	private String nombreCompletoPasajero;
+	private String pagoId;
 
 	public IntegrationReservaConfirmada() {
 		super();
 	}
 
-	public IntegrationReservaConfirmada(String reservaId, String vueloId, int tipoDoc, int nroDoc, String nombreCompletoPasajero, String hora, String destino, int cantidadPasajeros, String pagoId) {
+	public IntegrationReservaConfirmada(
+		String reservaId,
+		String vueloId,
+		int tipoDoc,
+		int nroDoc,
+		String nombreCompletoPasajero,
+		String hora,
+		String origen,
+		String destino,
+		int cantidadPasajeros,
+		String pagoId
+	) {
 		//super("ReservaCreada",LocalDateTime.now().toString());
 		this.reservaId = reservaId;
 		this.cantidadPasajeros = cantidadPasajeros;
 		this.hora = hora;
 		this.vueloId = vueloId;
+		this.origen = origen;
 		this.destino = destino;
 		this.nroDoc = nroDoc;
 		this.tipoDoc = tipoDoc;
@@ -42,6 +53,10 @@ public class IntegrationReservaConfirmada {
 
 	public String getReservaId() {
 		return reservaId;
+	}
+
+	public String getOrigen() {
+		return origen;
 	}
 
 	public int getCantidadPasajeros() {
@@ -75,5 +90,4 @@ public class IntegrationReservaConfirmada {
 	public String getPagoId() {
 		return pagoId;
 	}
-
 }

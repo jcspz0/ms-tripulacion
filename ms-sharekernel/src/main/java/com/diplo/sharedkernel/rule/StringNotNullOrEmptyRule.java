@@ -3,7 +3,7 @@ package com.diplo.sharedkernel.rule;
 import com.diplo.sharedkernel.core.IBussinesRule.IBussinessRule;
 
 public class StringNotNullOrEmptyRule implements IBussinessRule {
-	
+
 	private String _value;
 	public String Message;
 
@@ -25,5 +25,4 @@ public class StringNotNullOrEmptyRule implements IBussinessRule {
 	public String GetMessage() {
 		return Message;
 	}
-
 }

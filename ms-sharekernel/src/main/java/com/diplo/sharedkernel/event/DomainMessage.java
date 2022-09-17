@@ -2,14 +2,13 @@ package com.diplo.sharedkernel.event;
 
 import org.springframework.context.ApplicationEvent;
 
-
 public class DomainMessage extends ApplicationEvent {
 
 	private static final long serialVersionUID = 1L;
 
 	Object message;
 	String action;
-	
+
 	public DomainMessage(Object source, String action) {
 		super(source);
 		this.message = source;
@@ -19,9 +18,8 @@ public class DomainMessage extends ApplicationEvent {
 	public Object getMessage() {
 		return this.message;
 	}
-	
+
 	public String getAction() {
 		return this.action;
 	}
-	
 }

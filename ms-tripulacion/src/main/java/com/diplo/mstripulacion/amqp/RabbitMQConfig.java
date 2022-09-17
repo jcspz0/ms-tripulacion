@@ -21,7 +21,7 @@ public class RabbitMQConfig {
 
 	@Bean
 	Queue tripulacionCreadaToVuelo() {
-		return new Queue("tripulacion.tripulacioncreada.vuelo.guardartripulacion", false);
+		return new Queue("tripulacion.tripulacioncreada.vuelo.guardartripulacion", true);
 	}
 	
 	@Bean

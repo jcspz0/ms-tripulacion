@@ -8,7 +8,7 @@ public class MessageEvent extends ApplicationEvent {
 
 	Object message;
 	String action;
-	
+
 	public MessageEvent(Object source, String action) {
 		super(source);
 		this.message = source;
@@ -18,9 +18,8 @@ public class MessageEvent extends ApplicationEvent {
 	public Object getMessage() {
 		return this.message;
 	}
-	
+
 	public String getAction() {
 		return this.action;
 	}
-	
 }
