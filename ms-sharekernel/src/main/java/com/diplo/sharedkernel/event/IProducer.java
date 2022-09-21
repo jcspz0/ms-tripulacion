@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 //public interface IProducer<T extends ApplicationEvent> {
-public interface IProducer<T> {
+	public interface IProducer<T> {
+	
 	@EventListener
 	void onProcessEvent(T event);
+
 }

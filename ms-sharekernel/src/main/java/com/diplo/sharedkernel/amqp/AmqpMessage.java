@@ -2,10 +2,10 @@ package com.diplo.sharedkernel.amqp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AmqpMessage implements IAmqpMessage {
+public class AmqpMessage implements IAmqpMessage{
 
 	private Object message;
-	ObjectMapper Obj = new ObjectMapper();
+	ObjectMapper Obj = new ObjectMapper();  
 
 	public AmqpMessage(Object message) {
 		super();
@@ -16,4 +16,8 @@ public class AmqpMessage implements IAmqpMessage {
 	public Object getMessage() {
 		return message;
 	}
+
+	
+	
+	
 }

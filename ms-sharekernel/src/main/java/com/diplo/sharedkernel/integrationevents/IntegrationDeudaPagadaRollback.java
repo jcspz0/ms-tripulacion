@@ -1,18 +1,19 @@
 package com.diplo.sharedkernel.integrationevents;
 
-import com.diplo.sharedkernel.event.IntegrationEvent;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
+import com.diplo.sharedkernel.event.IntegrationEvent;
 
 //public class IntegrationReservaCreada extends IntegrationEvent  {
 public class IntegrationDeudaPagadaRollback {
 
 	/**
-	 *
+	 * 
 	 */
-	private String reservaId;
-	private String pagoId;
+	private  String reservaId;
+	private  String pagoId;
 
 	public IntegrationDeudaPagadaRollback() {
 		super();
@@ -31,4 +32,5 @@ public class IntegrationDeudaPagadaRollback {
 	public String getPagoId() {
 		return pagoId;
 	}
+
 }
